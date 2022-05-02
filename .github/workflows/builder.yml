@@ -1,0 +1,22 @@
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+    - name: Compile LaTeX document
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: khomenok-cv.tex
+    - run: mv khomenok-cv.pdf out/khomenok-cv.pdf
+    - uses: EndBug/add-and-commit@v9
+      with:
+        author_name: Wall-E
+        author_email: khomenok-cv@robot.robot
+        message: 'automated pdf build'
+        add: 'out/khomenok-cv.pdf'

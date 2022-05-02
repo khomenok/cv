@@ -1,4 +1,5 @@
-cv.log
-cv.synctex.gz
-cv.out
-cv.aux
+/.idea
+/out/*.log
+/out/*.synctex.gz
+/out/*.out
+/out/*.aux
