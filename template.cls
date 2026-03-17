@@ -198,9 +198,11 @@
 	&\parbox[t]{0.825\textwidth}{% 82.5% of the text width of the page
 		\textbf{#2}% Entry heading text
 		\hfill% Horizontal whitespace
-		{\textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
+		{\textbf{\textcolor{black}{#3}}}% Right-aligned entry qualifier text
+	}\\*% No page break between header and body
+	\multicolumn{2}{l}{\parbox[t]{\textwidth}{% Full width for description
 		#4 % Entry description text
-	}\\\\}
+	}}\\\\}
 
 % Command to output a separator slash between lists, e.g. '  /  '
 \newcommand{\slashsep}{\hspace{3mm}/\hspace{3mm}}
